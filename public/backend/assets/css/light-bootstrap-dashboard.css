@@ -2325,6 +2325,10 @@ fieldset[disabled] .btn-neutral.active {
     display: inline-block;
 }
 
+.modal-backdrop.in {
+    display: none;
+}
+
 .card .author {
     font-size: 12px;
     font-weight: 600;
