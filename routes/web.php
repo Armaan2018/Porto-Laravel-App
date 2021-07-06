@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,22 +31,38 @@ Category Routes
 
 Route::get('category',[CategoryController::class,'index']);
 
-
 Route::post('category-store',[CategoryController::class,'store'])->name('category.store');
 
-
-
 Route::get('category-show',[CategoryController::class,'showCategory'])->name('category.show');
-
-
-Route::get('category-show',[CategoryController::class,'showCategory'])->name('category.show');
-
-
 
 Route::get('category-delete/{id}',[CategoryController::class,'destoryCategory'])->name('category.delete');
-
-
-
 Route::get('category-edit/{id}',[CategoryController::class,'editCategory'])->name('category.edit');
-
 Route::post('category-update',[CategoryController::class,'update'])->name('category.update');
+
+
+
+
+
+/*
+Tag Routes
+*/
+
+Route::get('tag',[TagController::class,'index']);
+
+Route::post('tag-store',[TagController::class,'tagCreate'])->name('tag.store');
+
+Route::get('tag-show',[TagController::class,'tagShow'])->name('tag.show');
+
+Route::get('tag-delete/{id}',[TagController::class,'tagDestory'])->name('tag.delete');
+
+Route::get('tag-edit/{id}',[TagController::class,'tagEdit'])->name('tag.edit');
+
+Route::post('tag-update',[TagController::class,'tagUpdate'])->name('tag.update');
+
+
+
+/*
+Post Routes
+*/
+
+Route::get('post',[PostController::class,'index']);

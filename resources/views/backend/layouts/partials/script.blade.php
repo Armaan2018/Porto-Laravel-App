@@ -19,7 +19,13 @@
     <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
     <script src="{{ asset('backend/assets/js/demo.js') }}"></script>
 
-    <script src="{{ asset('backend/assets/js/backend.js') }}"></script>
+    
+    <script src="{{ asset('backend/assets/js/jquery.tagselect.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/dropify.min.js') }}"></script>
+
+    <script src="{{ asset('backend/assets/js/category.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/tag.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/post.js') }}"></script>
 
 
 
