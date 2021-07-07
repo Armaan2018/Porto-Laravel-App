@@ -15,7 +15,8 @@ $('.dropify').dropify();
                 $('#video').hide();
                 $('#audio').hide();
                 $('#gallery').hide();
-                $('form#preque').hide();
+                $('#basicEditor').hide();
+
 
                 $(function(){
 
@@ -33,8 +34,9 @@ $('.dropify').dropify();
 
 
             if (format == 'image') {
-                 $('form#preque').show();
+
                 $('#image').show();
+                $('#basicEditor').show();
             }else{
 
               
@@ -43,6 +45,7 @@ $('.dropify').dropify();
 
             if (format == 'video') {
                 $('#video').show();
+                $('#basicEditor').show();
             }else{
 
                 $('#video').hide(); 
@@ -51,6 +54,7 @@ $('.dropify').dropify();
 
             if (format == 'audio') {
                 $('#audio').show();
+                $('#basicEditor').show();
             }else{
 
                 $('#audio').hide(); 
@@ -58,6 +62,7 @@ $('.dropify').dropify();
 
            if (format == 'gallery') {
                 $('#gallery').show();
+                $('#basicEditor').show();
             }else{
 
                 $('#gallery').hide(); 
@@ -75,6 +80,49 @@ $('.dropify').dropify();
 
 
          });
+
+
+
+        /*********************
+         *    Post Format    * 
+         *********************/
+
+         $(document).on('submit','form#post_form',function(event){
+
+            event.preventDefault();
+
+
+            $.ajax({
+
+
+                url:'post-store',
+                method:"POST",
+                data:new FormData(this),
+                processData:false,
+                contentType:false,
+                success:function(response){
+
+                    if (response) {
+                        $('form#post_form')[0].reset();
+                        $('#image').hide();
+                        $('#video').hide();
+                        $('#audio').hide();
+                        $('#gallery').hide();
+                        $('#basicEditor').hide();
+                        $('#exampleModal').hide();
+                        swal("All Done!", "Post Published!", "success");
+
+                    }
+
+                }
+
+            });
+
+
+
+
+         });
+
 
 
 

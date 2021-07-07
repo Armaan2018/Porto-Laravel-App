@@ -109,45 +109,42 @@
   </div>
 
 
+
+<form id="post_form" action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+@csrf
+
+
  <div class="form-group">
     <label for="exampleFormControlSelect1">Select Post Type</label>
-    <select class="form-control" id="post_format">
+    <select class="form-control" id="post_format" name="format">
      <option disabled="" selected="">Select Post Format</option>
       <option value="image">Image</option>
       <option value="video">Video</option>
       <option value="audio">Audio</option>
-      <option value="gallery">Gallery</option>
-      
+      <option value="gallery">Gallery</option>    
     </select>
   </div>
 
-            <form id="preque">
-
-
-
-
   <div class="form-group" id="audio">
     <label for="audio">Spotify Audio link</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="audio link">
+    <input type="text" name="audio_file" class="form-control" id="exampleFormControlInput1" placeholder="audio link">
   </div>   
 
   <div class="form-group" id="video">
     <label for="exampleFormControlInput1">youtube Video link</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="video link">
+    <input type="text" name="video_file" class="form-control" id="exampleFormControlInput1" placeholder="video link">
   </div>
 
-<div class="row" id="image">
-
-<input type="file" class="dropify" data-default-file="url_of_your_file" />
-
-</div>
-
+  <div class="form-group" id="image">
+    <label for="exampleFormControlFile1">Feature Image</label>
+    <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+  </div>
 
 
 <div class="row" id="gallery">
     <div class="col-md-6">
           <div class="form-group" id="video">
-      <input type="file" name="image">
+      <input type="file" name="gallery[]" multiple="">
   </div> 
     </div>
     <div class="col-md-6">
@@ -157,37 +154,27 @@
 
 
 
-  
-
-
-
-
-
-
-
+<div class="" id="basicEditor">
 
   <div class="form-group">
     <label for="title">Post Title</label>
-    <input type="text" class="form-control" id="title" placeholder="Post Title">
+    <input name="title" type="text" class="form-control" id="title" placeholder="Post Title">
   </div>
 
  <div class="form-group">
     <label for="Category">Category</label>
-    <select class="form-control" id="Category">
+    <select class="form-control" id="Category" name="category">
 
-        <option disabled="" selected="">Select Category</option>
+        <option disabled="" selected="" >Select Category</option>
         @foreach ($category as $element)
             <option value='{{ $element -> id}}'>{{ $element -> name}}</option>
         @endforeach
-     
-
-      
     </select>
   </div>
 
 <label for="title">Tags</label>
 <div class="qtagselect" >
-  <select class="qtagselect__select" multiple width="100%">
+  <select class="qtagselect__select" multiple width="100%" name="tag">
 
     @foreach ($tag as $element)
     <option value="{{ $element -> id}}" class="isblue">{{ $element -> name}}</option>
@@ -202,16 +189,22 @@
 
   <div class="form-group" style="padding:9px 0px 9px 0px ">
     <label for="content">Write Your Content Here</label>
-    <textarea class="form-control" id="content" rows="5"></textarea>
+    <textarea name="content" class="form-control" id="content" rows="5"></textarea>
   </div>
 
+
+
+
+
+<div class="form-group">
   <div class="row">
-
       <div class="col-md-12">
-          <a href="" class="btn btn-primary" style="width: 100%;">Publish Now</a>
+        <button type="submit" class="btn btn-primary">Publish Now</button>
       </div>
-
   </div>
+</div>
+
+</div>
 
 
 

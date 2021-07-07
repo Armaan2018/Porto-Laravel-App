@@ -6,6 +6,8 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -39,9 +41,77 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function postStore(Request $request)
     {
-        //
+
+
+          $unique_file_name = '';
+
+        if ($request -> hasFile('image')) {
+
+            $img = $request -> file('image');
+
+            $unique_file_name = md5(time().rand()).'.'. $img -> getClientOriginalExtension();
+
+            $img -> move(public_path('media/post/'), $unique_file_name);
+        }
+
+
+           $gallery_arr = [];
+
+            if ($request -> hasFile('gallery')) {
+
+
+              foreach ($request -> file('gallery') as $gallery ) {
+                
+                $unique_gall_name = md5(time().rand()).'.'. $gallery -> getClientOriginalExtension();
+                $gallery -> move(public_path('media/post/'),$unique_gall_name);
+                array_push($gallery_arr, $unique_gall_name);
+              }
+
+
+
+            }
+
+
+
+           $post_feature = [
+
+
+
+            'format'      => $request -> format,
+            'audio_file'  => $request -> audio_file,
+            'video_file'  => $request -> video_file,
+            'image'       => $unique_file_name,
+            'gallery'     => $gallery_arr,
+
+
+
+
+
+        ];
+
+
+
+
+        Post::Create([
+           
+           'title' => $request -> title,
+           'slug' => str::slug($request -> title),
+           'content' => $request -> content,
+           'featured' => json_encode($post_feature),
+
+
+        ]);
+
+            
+
+
+
+
+
+      return response()->json(['success','value added Successful']);
+        
     }
 
     /**

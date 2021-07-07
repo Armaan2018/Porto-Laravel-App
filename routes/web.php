@@ -66,3 +66,5 @@ Post Routes
 */
 
 Route::get('post',[PostController::class,'index']);
+
+Route::post('post-store',[PostController::class,'postStore'])->name('post.store');
