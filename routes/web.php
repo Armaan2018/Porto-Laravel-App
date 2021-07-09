@@ -68,3 +68,5 @@ Post Routes
 Route::get('post',[PostController::class,'index']);
 
 Route::post('post-store',[PostController::class,'postStore'])->name('post.store');
+Route::get('post-show',[PostController::class,'postShow'])->name('post.show');
+Route::get('post-delete/{id}',[PostController::class,'postDestory'])->name('post.delete');

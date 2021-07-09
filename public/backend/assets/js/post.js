@@ -84,7 +84,7 @@ $('.dropify').dropify();
 
 
         /*********************
-         *    Post Format    * 
+         *    Post Insert    * 
          *********************/
 
          $(document).on('submit','form#post_form',function(event){
@@ -103,6 +103,7 @@ $('.dropify').dropify();
                 success:function(response){
 
                     if (response) {
+                        
                         $('form#post_form')[0].reset();
                         $('#image').hide();
                         $('#video').hide();
@@ -111,6 +112,8 @@ $('.dropify').dropify();
                         $('#basicEditor').hide();
                         $('#exampleModal').hide();
                         swal("All Done!", "Post Published!", "success");
+                        allPost();
+
 
                     }
 
@@ -123,6 +126,111 @@ $('.dropify').dropify();
 
          });
 
+
+        /*********************
+         *    Post Show    * 
+         *********************/
+
+
+        function allPost() {
+            $.ajax({
+                url: 'post-show',
+                success: function(response) {
+
+                    $('tbody#post_tbody').html(response);
+
+                }
+
+
+            });
+        }
+
+
+
+         allPost();
+
+
+        /*********************
+         *    Post Delete    * 
+         *********************/
+
+
+
+         // $(document).on('click','a#post_delete_id',function(event){
+         //    event.preventDefault();
+
+
+         //    let id = $(this).attr('post_del_id');
+
+         //    $.ajax({
+         //        url:'post-delete/' + id,
+         //        success:function(response){
+
+
+         //            alert(response)
+
+         //        }
+         //    });
+
+         // });
+
+
+                 $(document).on('click', 'a#post_delete_id', function(event) {
+            event.preventDefault();
+
+
+
+            swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this Post!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+
+
+                    let id = $(this).attr('post_del_id');
+
+                    $.ajax({
+
+
+                        url: 'post-delete/' + id,
+                        success: function(response) {
+
+
+                            if (willDelete) {
+                                swal("Your Post has been deleted!", {
+                                    icon: "success",
+                                });
+
+                                allPost();
+                            } else {
+                                swal("post hasn't deleted");
+                            }
+
+
+
+
+
+
+                        }
+
+
+
+
+
+
+                    });
+
+
+
+                });
+
+
+
+
+        });
 
 
 

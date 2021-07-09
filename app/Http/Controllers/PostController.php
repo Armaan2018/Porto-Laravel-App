@@ -8,6 +8,7 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File; 
 
 class PostController extends Controller
 {
@@ -74,6 +75,9 @@ class PostController extends Controller
             }
 
 
+            $format =  $request -> format;
+
+
 
            $post_feature = [
 
@@ -94,15 +98,22 @@ class PostController extends Controller
 
 
 
-        Post::Create([
+       $data = Post::Create([
            
            'title' => $request -> title,
            'slug' => str::slug($request -> title),
            'content' => $request -> content,
            'featured' => json_encode($post_feature),
+           'format'   => $format
+
 
 
         ]);
+
+
+       $data -> categories() -> attach($request -> category);
+       $data -> tags() -> attach($request -> tag);
+
 
             
 
@@ -120,9 +131,44 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function postShow()
     {
-        //
+
+
+        $data = Post::latest()->get();
+
+
+        $i = 1;
+     foreach ($data as $element) { ?>
+
+                                        <tr>
+                                            <td><?php echo $i; $i++ ?></td>
+                                            <td><?php echo $element -> title; ?></td>
+                                            <td><?php echo $element -> slug; ?></td>
+                                            <td><?php foreach ($element -> categories as $category): ?>
+                                                <?php echo $category -> name; ?>
+                                            <?php endforeach ?></td>
+                                            <td>
+
+                                                <?php foreach ($element -> tags as $tag): ?>
+
+  
+                                            <span class="badge badge-info"><?php echo $tag -> name; ?></span> 
+                                                
+                                            <?php endforeach ?>
+
+
+
+                                        </td>
+                                            <td><?php echo $element -> format; ?></td>
+                                            <td>
+                                                <a href="" class="btn btn-sm btn-info">Edit</a>
+                                                <a href="" id="post_delete_id" post_del_id="<?php echo $element -> id ?>" class="btn btn-sm btn-warning">Delete</a>
+                                                <a href="" class="btn btn-sm btn-warning">Status</a>
+                                            </td>
+                                        </tr>
+          
+     <?php   }   
     }
 
     /**
@@ -154,8 +200,149 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
-    {
-        //
+    // public function postDestory($id)
+    // {
+
+
+
+
+
+
+
+
+    //     $data = Post::find($id);
+        
+
+    //     $data -> delete();
+      
+    // }
+
+
+
+
+
+
+
+ public function postDestory($id) {
+
+
+    // $news        = Post::findOrFail($id);
+
+     // $reveal     =  $news -> featured;
+
+     // $ranjha     = json_decode($reveal);
+
+    //  // $naval      = $ranjha -> image;
+
+     // $nav_gal    = $ranjha -> gallery;
+
+     // $gal        = json_encode($nav_gal);
+
+
+    //  $gallery    = json_decode($gal);
+
+
+    //  $gal_length = count($gallery);
+
+
+     // $image = '/media/post/'.$naval;
+     // $gallery[] = '/media/post/'.$nivana;
+
+
+
+
+     // if (file_exists($path.$image)) {
+     //     unlink($path.$image);
+
+     //     $news -> delete();
+     // }
+
+
+
+
+
+
+
+
+    //    $gal_length = count($gallery);
+    //    for ($i = 0; $i < $gal_length; $i++) {
+    //        unlink(public_path("media/post/".$gallery[$i]));
+    //    }
+    //    $data->delete();
+
+    
+
+
+
+
+
+     // $image = '/media/post/'.$naval;
+     // $gallery[] = '/media/post/'.$nivana;
+
+
+     // $path = str_replace('\\', '/', public_path());
+
+     // if (file_exists($path.$image)) {
+     //     unlink($path.$image);
+
+     //     $news -> delete();
+     // }elseif (file_exists($path.$gallery[]) ) {
+     //      unlink($path.$gallery[]);
+
+     //      $news -> delete();
+     // }else{
+     //    $news -> delete();
+     // }
+
+
+       $news        = Post::findOrFail($id);
+       $feature     = $news -> featured;
+       $ranjha      = json_decode($feature); 
+       $gallery     = $ranjha -> gallery;
+       $gal         = json_encode($gallery);
+       $gal_images  = json_decode($gal);
+       $length = count($gal_images);
+
+         for ($i = 0; $i < $length; $i++) {
+           unlink(public_path("media/post/".$gal_images[$i]));
+       }
+
+       $news -> delete();
+
+
+
+
+
+
+    $naval      = $ranjha -> image;
+
+    $image = '/media/post/'.$naval;
+
+    $path = str_replace('\\', '/', public_path());
+
+
+
+     $path = str_replace('\\', '/', public_path());
+
+    if (file_exists($path.$image)) {
+        unlink($path.$image);
+
+        $news -> delete();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
 }
