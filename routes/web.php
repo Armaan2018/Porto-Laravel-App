@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,17 @@ Route::get('post',[PostController::class,'index']);
 Route::post('post-store',[PostController::class,'postStore'])->name('post.store');
 Route::get('post-show',[PostController::class,'postShow'])->name('post.show');
 Route::get('post-delete/{id}',[PostController::class,'postDestory'])->name('post.delete');
+
+
+
+
+
+
+
+
+
+
+
+
+//*frontends routes*/
+Route::get('blog',[BlogController::class,'index']);
