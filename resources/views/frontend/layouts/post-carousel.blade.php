@@ -13,16 +13,16 @@
                                        	{{-- expr --}}
                                       
 											<article class="i article">
-							<a href="post-detail-standard.html" title="#">
-								<img src="media/post/{{ $featured -> image}}" alt="#" width="580" height="550" class="img-responsive">
+							<a href="{{ route('blog.single',$article-> slug) }}" title="#">
+								<img src="{{URL::to('/')}}/media/post/{{ $featured -> image}}" alt="#" width="580" height="550" class="img-responsive">
 							</a>
 							<div class="c">
 								<h2 class="title">
-									<a href="post-detail-standard.html" title="#">{{ $article -> title}}</a>
+									<a href="{{ route('blog.single',$article-> slug) }}" title="#">{{ $article -> title}}</a>
 								</h2>
 								<div class="info">
 @foreach ($article -> categories as $cat)
-										<a href="post-detail-standard.html" title="#">{{ $cat -> name}}</a>
+										<a href="{{ route('blog.single',$article-> slug) }}" title="#">{{ $cat -> name}}</a>
 @endforeach
 								</div>
 							</div>

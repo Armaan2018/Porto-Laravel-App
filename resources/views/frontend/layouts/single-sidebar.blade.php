@@ -43,6 +43,41 @@
 							</div>
 						</div>
 
+
+
+
+
+						<!-- Our authors -->						
+						<div class="col-xs-12 i">
+							<div class="box ourAuthorsBox">
+								<h2>Our Authors</h2>
+
+								<div class="c">
+									<div>
+										<div class="i">
+											<div class="imageWrap">
+												<img src="tmp/190x190-2.jpg" alt="#" width="190" height="190" class="img-responsive image">
+											</div>
+											<div class="name">Jane Doe</div>
+											<p class="info">Food specialist, recipe nerd and I love to cook.</p>
+										</div>
+										<!-- <div class="i">
+											<div class="imageWrap">
+												<img src="tmp/190x190-1.jpg" alt="#" width="190" height="190" class="img-responsive image">
+											</div>
+											<div class="name">Andrew Doe</div>
+											<p class="info">Blog specialist, design nerd and I like muffins.</p>
+										</div> -->
+									</div>
+
+									<div class="btns">
+										<a href="page-about-us.html" title="#" class="btn"><span>Follow</span></a>
+										<a href="page-about-us.html" title="#" class="btn btn-color-full"><span>Message</span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<!-- Ads -->
 						<div class="col-xs-12 i">
 							<div class="box ads">
@@ -53,217 +88,6 @@
 						</div>
 
 						<!-- Most popular by -->
-						<div class="col-xs-12 i">
-							<div class="box articleMediaList">
-								<h2>Most popular by</h2>
-								
-								<div class="articlesFilter clearfix js-tabs" role="tablist">
-									<div class="i">
-										<a href="#views" aria-controls="views" role="tab" data-toggle="tab" class="active">Views</a>
-									</div>
-									<div class="i">
-										<a href="#likes" aria-controls="likes" role="tab" data-toggle="tab">Likes</a>
-									</div>
-									<div class="i">
-										<a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a>
-									</div>
-								</div>
-								
-								<div class="tab-content bordered">
-									<!-- Views -->
-									<div role="tabpanel" class="tab-pane fade in active" id="views">
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-1.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Even Forest Powers Have Limits</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 26, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-2.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">There is something in the New York air that makes sleep useless.</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 25, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-3.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Checkin' out my new Fuji camera</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 25, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-1.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Even Forest Powers Have Limits</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 24, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-									</div>
-
-									<!-- Likes -->
-									<div role="tabpanel" class="tab-pane fade" id="likes">
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-3.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Checkin' out my new Fuji camera</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 25, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-2.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">There is something in the New York air that makes sleep useless.</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 25, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-1.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Even Forest Powers Have Limits</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 24, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-3.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Checkin' out my new Fuji camera</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 25, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-									</div>
-									
-									<!-- Comments -->
-									<div role="tabpanel" class="tab-pane fade" id="comments">
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-2.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">There is something in the New York air that makes sleep useless.</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 25, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-1.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Even Forest Powers Have Limits</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 26, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-3.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Checkin' out my new Fuji camera</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 25, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-										<article class="article media">
-											<div class="media-left media-middle">
-												<a href="post-detail-standard.html" title="#" class="image">
-													<img src="frontend/tmp/90x90-1.jpg" alt="#" width="90" height="90" class="media-object">
-												</a>
-											</div>
-											<div class="media-body">
-												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">Even Forest Powers Have Limits</a>
-												</h3>
-												<div class="info">
-													<a href="post-detail-standard.html" title="#">March 24, <span data-current-year></span></a>
-												</div>
-											</div>
-										</article>
-									</div>
-								</div>
-							</div>
-						</div>
 
 						<!-- Recent Comments -->
 						<div class="col-xs-12 i">
@@ -428,110 +252,7 @@
 							</div>
 						</div>
 
-						<!-- Ads -->
-						<div class="col-xs-12 i">
-							<div class="box ads">
-								<a href="#" title="#">
-									<img src="frontend/tmp/300x250-1.png" alt="#" width="300" height="250" class="img-responsive">
-								</a>
-							</div>
-						</div>
 
-						<!-- Twitter feed -->
-						<div class="col-xs-12 i">
-							<div class="box commentsWrap twitterFeed">
-								<h2>Twitter feed</h2>
-
-								<div class="c">
-									<div class="media i">
-										<div class="media-left media-middle">
-											<a href="#" title="#" class="image">
-												<img src="frontend/tmp/60x60-1.jpg" alt="#" width="60" height="60" class="media-object">
-											</a>
-										</div>
-										<div class="media-body">
-											<div class="tweet">
-												<p><a href="#" title="#">@AndrewDoe</a> Suspendisse potenti morbi phare arcu vitae risus feret finibus...</p>
-												<div class="info">
-													<span>16 min ago</span>
-												</div>
-
-												<div class="more">
-													<span class="hoverExtend active"><a href="#" title="#">Follow</a></span>
-													<span class="hoverExtend active"><a href="#" title="#">Retweet</a></span>
-													<span class="hoverExtend active"><a href="#" title="#">Favorite</a></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="media i">
-										<div class="media-left media-middle">
-											<a href="#" title="#" class="image">
-												<img src="frontend/tmp/60x60-2.jpg" alt="#" width="60" height="60" class="media-object">
-											</a>
-										</div>
-										<div class="media-body">
-											<div class="tweet">
-												<p><a href="#" title="#">@Themees</a> Vestibulum consect lacus odio, in ultrices magna...</p>
-												<div class="info">
-													<span>24 min ago</span>
-													<span><i class="fa fa-map-marker"></i> Sarajevo, BiH</span>
-												</div>
-
-												<div class="more">
-													<span class="hoverExtend active"><a href="#" title="#">Follow</a></span>
-													<span class="hoverExtend active"><a href="#" title="#">Retweet</a></span>
-													<span class="hoverExtend active"><a href="#" title="#">Favorite</a></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="media i">
-										<div class="media-left media-middle">
-											<a href="#" title="#" class="image">
-												<img src="frontend/tmp/60x60-1.jpg" alt="#" width="60" height="60" class="media-object">
-											</a>
-										</div>
-										<div class="media-body">
-											<div class="tweet">
-												<p><a href="#" title="#">@Anne</a> Duis ullamcorper pretium risus, in ultrices magna.</p>
-												<div class="info">
-													<span>29 min ago</span>
-												</div>
-
-												<div class="more">
-													<span class="hoverExtend active"><a href="#" title="#">Follow</a></span>
-													<span class="hoverExtend active"><a href="#" title="#">Retweet</a></span>
-													<span class="hoverExtend active"><a href="#" title="#">Favorite</a></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="media i">
-										<div class="media-left media-middle">
-											<a href="#" title="#" class="image">
-												<img src="frontend/tmp/60x60-3.jpg" alt="#" width="60" height="60" class="media-object">
-											</a>
-										</div>
-										<div class="media-body">
-											<div class="tweet">
-												<p><a href="#" title="#">@John</a> Duis semper nibh egestas dolor, vestibulum gravida.</p>
-												<div class="info">
-													<span>44 min ago</span>
-													<span><i class="fa fa-map-marker"></i> Sarajevo, BiH</span>
-												</div>
-
-												<div class="more">
-													<span class="hoverExtend active"><a href="#" title="#">Follow</a></span>
-													<span class="hoverExtend active"><a href="#" title="#">Retweet</a></span>
-													<span class="hoverExtend active"><a href="#" title="#">Favorite</a></span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 							
 						<!-- Recent Posts -->
 						<div class="col-xs-12 i">

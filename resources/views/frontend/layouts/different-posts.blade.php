@@ -98,11 +98,10 @@
 												</h3>
 												<div class="info">
 													<div>
-														<span class="date">March 26, <span data-current-year></span></span>
+														<span class="date">{{ date('d M D')}}, <span data-current-year></span></span>
 													</div>
-													<div>by <a href="post-detail-standard.html" title="#">Themees</a></div>
+													<div>by <a href="post-detail-standard.html" title="#">Author</a></div>
 													<div>in <a href="post-detail-standard.html" title="#">Nature</a></div>
-													<div>8 min read</div>
 												</div>
 												<p>
 
@@ -119,8 +118,14 @@
 												<footer class="footer">
 													<div class="row">
 														<div class="col-sm-12 col-lg-6 tags">
-															<a href="post-detail-standard.html" title="#">#Escape</a>
-															<a href="post-detail-standard.html" title="#">#Cityt</a>
+
+															@foreach ($article -> tags as $tag)
+
+															
+															<a href="post-detail-standard.html" title="#">#{{ $tag -> name}}</a>
+
+															@endforeach
+
 														</div>
 														<div class="col-sm-12 col-lg-6 moreInfo">
 															<div class="dropdown onHover">
@@ -303,6 +308,8 @@
 											</div>
 										</div>
 									</div>
+
+
 									<div class="box">
 										<h3 class="title">
 											<a href="#" title="#">There is something in the New York air that makes sleep useless.</a>

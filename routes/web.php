@@ -85,3 +85,7 @@ Route::get('post-delete/{id}',[PostController::class,'postDestory'])->name('post
 
 //*frontends routes*/
 Route::get('blog',[BlogController::class,'index']);
+
+
+
+Route::get('blog-single/{slug}',[BlogController::class,'singlePost'])->name('blog.single');

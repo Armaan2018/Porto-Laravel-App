@@ -2,26 +2,23 @@
 			<div class="row">
 				<div class="col-xs-6 col-sm-4 col-lg-15 items">
 					<div class="row">
+						@foreach ($data as $social)
+
+						@php
+							$featured = json_decode($social -> featured)
+						@endphp
+
+						@if ($featured -> format == 'image')
+							
+						
 						<div class="col-xs-6 i">
 							<a href="post-detail-standard.html" title="#">
-								<img src="frontend/tmp/185x185-1.jpg" alt="#" width="185" height="185" class="img-responsive">
+								<img src="{{URL::to('/')}}/media/post/{{ $featured -> image}}" alt="#" width="185" height="185" class="img-responsive">
 							</a>
 						</div>
-						<div class="col-xs-6 i">
-							<a href="post-detail-standard.html" title="#">
-								<img src="frontend/tmp/185x185-2.jpg" alt="#" width="185" height="185" class="img-responsive">
-							</a>
-						</div>
-						<div class="col-xs-6 i">
-							<a href="post-detail-standard.html" title="#">
-								<img src="frontend/tmp/185x185-3.jpg" alt="#" width="185" height="185" class="img-responsive">
-							</a>
-						</div>
-						<div class="col-xs-6 i">
-							<a href="post-detail-standard.html" title="#">
-								<img src="frontend/tmp/185x185-4.jpg" alt="#" width="185" height="185" class="img-responsive">
-							</a>
-						</div>
+
+						@endif
+@endforeach
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-lg-15 items">
