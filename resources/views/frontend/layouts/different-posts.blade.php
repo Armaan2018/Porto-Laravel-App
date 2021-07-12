@@ -82,17 +82,17 @@
 								<div class="i">
 										<article class="article">
 											<div class="image">
-												<a href="post-detail-standard.html" title="#" class="favs">
+												<a href="{{ route('blog.single',$article-> slug) }}" title="#" class="favs">
 													<i class="fa fa-heart"></i>
 													<div class="count">54</div>
 												</a>
-												<a href="post-detail-standard.html" title="#">
+												<a href="{{ route('blog.single',$article-> slug) }}" title="#">
 													<img src="media/post/{{$featured -> image}}" alt="#" width="770" height="579" class="img-responsive">
 												</a>
 											</div>
 											<div class="box">
 												<h3 class="title">
-													<a href="post-detail-standard.html" title="#">{{
+													<a href="{{ route('blog.single',$article-> slug) }}" title="#">{{
 														$article -> title
 													}}</a>
 												</h3>
@@ -112,7 +112,7 @@
 {!! Str::of(htmlspecialchars($article-> content))->words(40)!!}
 												</p>
 												<div class="btns text-center">
-													<a href="post-detail-standard.html" title="#" class="btn btn-primary"><span>Continue reading</span></a>
+													<a href="{{ route('blog.single',$article-> slug) }}" title="#" class="btn btn-primary"><span>Continue reading</span></a>
 												</div>
 
 												<footer class="footer">

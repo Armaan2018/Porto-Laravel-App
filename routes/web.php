@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +90,18 @@ Route::get('blog',[BlogController::class,'index']);
 
 
 Route::get('blog-single/{slug}',[BlogController::class,'singlePost'])->name('blog.single');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/', [App\Http\Controllers\TestController::class, 'index'])->name('coming.home');
